@@ -1,12 +1,11 @@
-import banner from "../assets/hero.jpg"
 
 function Hero() {
   return (
-    //Banner
-    <section>
-        <div className='h-[100vh]'>
-            <img className="h-[50vh] w-[100vw] " src={banner} alt="" />
-            <h1 className=" text-5xl bg-gray-400 relative top-3">adasd</h1>
+    <section className="bg-[#FAFAFB] p-5">
+        <div className="flex flex-col items-center gap-5">
+                 <h1 className="text-[#636AE8] text-4xl font-semibold">Discover Your Finance Guide</h1>      
+                 <p>Unlock the secrets of online finance with our must-have book. Equip yourself with the knowledge to navigate the financial world.</p>
+                 <button className=" rounded-md text-white p-1 bg-[#636AE8]">Shop Now</button>
         </div>
     </section>
   )
