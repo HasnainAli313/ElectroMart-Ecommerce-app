@@ -1,25 +1,116 @@
+// import { Link } from "react-router-dom"
+// import { BiSearchAlt } from "react-icons/bi";
+// import logo  from "../assets/Image.png"
+// import { TiShoppingCart } from "react-icons/ti";
+// import { useState } from "react";
+// import { CiMenuBurger } from "react-icons/ci";
 
-import { Link } from "react-router-dom"
+// function Navbar() {
+
+//   const [menu, isMenu] = useState(true);
+
+//   const  toggleMenu = ()=>{
+     
+//     isMenu(!menu);
+
+//   }
+
+//   return (
+//     <>
+//     <nav className='flex p-3 items-center gap-10 bg-[#FFFFFF] '>  
+//       <div className="flex items-center gap-1 font-semibold">
+//       <img src={logo} alt="" />
+//         <h1 className='text-2xl'>ElectroMart</h1>
+//       </div>
+
+//       <div className="navigation flex">
+//         <ul className='flex text-[#565E6C] text-xl gap-3 pr-3'>
+//             <li className='hover:text-[#636AE8]'>
+//                 <Link href=""/>Home<Link/>
+//             </li>
+//             <li className='hover:text-[#636AE8]'>
+//             <Link href=""/>About Us<Link/>
+//             </li>
+//             <li className='hover:text-[#636AE8]'>
+//             <Link href=""/>Shop<Link/>
+//             </li> 
+//             <li className='hover:text-[#636AE8]'>
+//             <Link href=""/>Contact Us<Link/>
+//             </li>
+//         </ul>
+
+//         {/* search bar and other icons */}
+//         <div className="flex items-center gap-2">
+//         <input className="border" type="search" />
+//         <BiSearchAlt size={25}/>
+//         <TiShoppingCart size={25} />
+//         </div>
+//       </div>
+        
+//         <CiMenuBurger className="hamburger" onClick={toggleMenu}  size={30}/>
+//      </nav>
+//     </>
+//   )
+// }
+
+// export default Navbar
+
+
+
+import { Link } from "react-router-dom";
+import { BiSearchAlt } from "react-icons/bi";
+import logo from "../assets/Image.png";
+import { TiShoppingCart } from "react-icons/ti";
+import { useState } from "react";
+import { CiMenuBurger } from "react-icons/ci";
 
 function Navbar() {
+  const [menu, setMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
+
+  const closeMenu = () => {
+    setMenu(false);
+  };
+
   return (
     <>
-    <nav className='flex p-3 justify-between bg-gray-500 '>  
-        <h1 className='text-2xl'>Sasta Bazzar</h1>
-        <ul className='flex  text-2xl gap-3 pr-3'>
-            <li className='hover:text-white'>
-                <Link href=""/>Home<Link/>
+      <nav className="flex p-3 items-center justify-between gap-10 bg-[#FFFFFF]">
+        <div className="flex items-center gap-1 font-semibold">
+          <img src={logo} alt="" />
+          <h1 className="text-2xl">ElectroMart</h1>
+        </div>
+
+        <div className={`navigation  flex-col  lg:flex-row flex ${menu ? "open" : ""}`}>
+          <ul className={`flex  flex-col lg:flex-row text-[#565E6C] text-xl gap-3 pr-3`}>
+            <li className="hover:text-[#636AE8]" onClick={closeMenu}>
+              <Link to="/">Home</Link>
             </li>
-            <li className='hover:text-white'>
-            <Link href=""/>About<Link/>
+            <li className="hover:text-[#636AE8]" onClick={closeMenu}>
+              <Link to="/about">About Us</Link>
             </li>
-            <li className='hover:text-white'>
-            <Link href=""/>Services<Link/>
+            <li className="hover:text-[#636AE8]" onClick={closeMenu}>
+              <Link to="/shop">Shop</Link>
             </li>
-        </ul>
-     </nav>
+            <li className="hover:text-[#636AE8]" onClick={closeMenu}>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+          </ul>
+
+          {/* search bar and other icons */}
+          <div className="flex p- items-center gap-2">
+            <input className="border outline-none pl-1 border-black" type="search" placeholder="searach an item " />
+            <BiSearchAlt size={25} />
+            <TiShoppingCart size={25} />
+          </div>
+        </div>
+
+        <CiMenuBurger className="hamburger" onClick={toggleMenu} size={30} />
+      </nav>
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

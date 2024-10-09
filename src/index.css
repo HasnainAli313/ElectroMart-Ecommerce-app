@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hamburger {
+    display: none;
+}
+
+/* Media query for Menu */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 1px;
+        cursor: pointer;
+    }
+
+    .navigation {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #fff;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navigation.open {
+        transform: translateX(0);
+    }
+}
+
+  
