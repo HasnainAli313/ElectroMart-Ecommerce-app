@@ -36,7 +36,7 @@ function Navbar() {
               <Link to="/shop">Shop</Link>
             </li>
             <li className="hover:text-[#636AE8]" onClick={closeMenu}>
-              <Link to="/contact">Contact Us</Link>
+              <Link to="/contactus">Contact Us</Link>
             </li>
           </ul>
 
