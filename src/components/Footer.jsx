@@ -7,7 +7,7 @@ import { FaYoutube } from "react-icons/fa";
 function Footer() {
   return (
     <>
-    <footer className="text-center fixed bottom-0 w-[100%] text-white p-5 bg-[#1D2128]">
+    <footer className="text-center relative bottom-0 w-[100%] text-white p-5 bg-[#1D2128]">
         <h3>Subscribe to our newsletter</h3>
         <div className="flex  justify-center p-2">
           <input className="border bg-[#1D2128] p-1 border-white rounded-l-xl pl-1" type="email" placeholder="Enter your email"/>
